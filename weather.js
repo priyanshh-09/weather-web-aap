@@ -29,7 +29,7 @@ async function getweatherdata(city) {
   console.log(response);
 
   if (!response.ok) {
-    throw new error("could not fetch weather data");
+    throw new Error("could not fetch weather data");
   }
 
   return await response.json();
@@ -39,7 +39,7 @@ function displayweatherinfo(data) {
   const {
     name: city,
     main: { temp, humidity },
-    weather: [{ description, id }],
+    weather: [{ description, id }]
   } = data;
 
   card.textContent = "";
